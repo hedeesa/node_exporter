@@ -1,0 +1,15 @@
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+Type=simple
+User={{ ansible_user }}
+Group={{ ansible_user }}
+ExecStart=/usr/local/bin/node_exporter --web.listen-address {{ node_exporter_listen_address }}:{{ node_exporter_port }} {{node_exporter_extra_config}} --log.level info
+
+SyslogIdentifier=node-exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

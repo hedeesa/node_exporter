@@ -1,0 +1,6 @@
+-
+  name: Node_expoter installation
+  hosts: [servers]
+  become: true
+  roles:
+    - node_exporter

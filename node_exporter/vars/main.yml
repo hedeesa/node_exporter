@@ -1,0 +1,10 @@
+---
+# vars file for node_exporter
+source: "https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz"
+node_exporter_listen_address: "{{ ansible_default_ipv4.address }}"
+node_exporter_extra_config: ""
+exporter_ip: "{{ansible_default_ipv4.address}}"
+exporter_port: 9100
+whitelist_ips:
+  - xx
+  - yy

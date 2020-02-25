@@ -1,0 +1,16 @@
+---
+# handlers file for node_exporter
+
+- name: systemd daemon reload
+  systemd:
+    daemon_reload: yes
+
+- name: restart service
+  service:
+    name: node-exporter
+    state: restarted
+
+- name: enable service
+  service:
+    name: node-exporter
+    enabled: yes
