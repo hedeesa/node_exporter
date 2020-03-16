@@ -37,13 +37,13 @@
   notify:
     - systemd daemon reload
     - restart service
-    - enabled service
+    - enable service
 
 - name: Add IP whitelist to ufw.
   ufw:
     src: "{{ item }}"
     rule: allow
-    port: "{{ exporter_port }}"
+    port: "{{ node_exporter_port }}"
   loop: "{{ whitelist_ips }}"
 
 
