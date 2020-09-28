@@ -45,6 +45,7 @@
     rule: allow
     port: "{{ node_exporter_port }}"
   loop: "{{ whitelist_ips }}"
+  when: whitelist_port == true
 
 
 
