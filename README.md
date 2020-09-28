@@ -9,5 +9,5 @@ ansible-playbook -i path/to/inventory main.yml
 ## node exporter docker
 If you want to run node exporter in a container just run this command:
 ```
-docker run -d --name node_exporter -p 9100:9100 prom/node-exporter:latest
+docker run -d --name node_exporter --restart always -p 9100:9100 prom/node-exporter:latest
 ```
